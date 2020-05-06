@@ -1,1 +1,79 @@
-<p>add-cases works!</p>
+<div class="example-container mat-elevation-z8">
+  <h2>Adicionar</h2>
+  <div class="example-loading-shade"
+        *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+      <a mat-flat-button color="primary" [routerLink] = "['/cases'] "><mat-icon>list</mat-icon></a>
+  </div>
+  <mat-card class="example-card">
+    <form [formGroup]="casesForm" (ngSubmit)="onFormSubmit()">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Nome" formControlName="name"
+                [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!casesForm.get('name').valid && casesForm.get('name').touched">Coloque seu nome</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Gênero</mat-label>
+        <mat-select formControlName="gender">
+          <mat-option *ngFor="let gl of genderList" [value]="gl">
+            {{gl}}
+          </mat-option>
+        </mat-select>
+        <mat-error>
+          <span *ngIf="!casesForm.get('gender').valid && casesForm.get('gender').touched">Escolha o genêro</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Idade</mat-label>
+        <input matInput type="number" min="0" max="100" placeholder="Idade" formControlName="age"
+                [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!casesForm.get('age').valid && casesForm.get('age').touched">Coloque sua idade</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Endereço</mat-label>
+        <input matInput placeholder="Endereço" formControlName="address"
+                [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!casesForm.get('address').valid && casesForm.get('address').touched">Coloque seu endereço</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Cidade</mat-label>
+        <input matInput placeholder="Cidade" formControlName="city"
+                [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!casesForm.get('city').valid && casesForm.get('city').touched">Coloque sua cidade</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>País</mat-label>
+        <input matInput placeholder="País" formControlName="country"
+                [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!casesForm.get('country').valid && casesForm.get('country').touched">Coloque seu país</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option *ngFor="let sl of statusList" [value]="sl">
+            {{sl}}
+          </mat-option>
+        </mat-select>
+        <mat-error>
+          <span *ngIf="!casesForm.get('status').valid && casesForm.get('status').touched">Selecione o status</span>
+        </mat-error>
+      </mat-form-field>
+      <div class="button-row">
+        <button type="submit" [disabled]="!casesForm.valid" mat-flat-button color="primary"><mat-icon>send</mat-icon></button>
+      </div>
+    </form>
+  </mat-card>
+</div>

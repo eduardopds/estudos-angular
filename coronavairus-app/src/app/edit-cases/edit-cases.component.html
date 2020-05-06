@@ -14,7 +14,7 @@
         <input matInput placeholder="Nome" formControlName="name"
                 [errorStateMatcher]="matcher">
         <mat-error>
-          <span *ngIf="!casesForm.get('name').valid && casesForm.get('name').touched">Please enter Name</span>
+          <span *ngIf="!casesForm.get('name').valid && casesForm.get('name').touched">Coloque seu nome</span>
         </mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width">
@@ -25,7 +25,7 @@
           </mat-option>
         </mat-select>
         <mat-error>
-          <span *ngIf="!casesForm.get('gender').valid && casesForm.get('gender').touched">Please choose Gender</span>
+          <span *ngIf="!casesForm.get('gender').valid && casesForm.get('gender').touched">Escolha o genêro</span>
         </mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width">
@@ -33,7 +33,7 @@
         <input matInput type="number" min="0" max="100" placeholder="Idade" formControlName="age"
                 [errorStateMatcher]="matcher">
         <mat-error>
-          <span *ngIf="!casesForm.get('age').valid && casesForm.get('age').touched">Please enter Age</span>
+          <span *ngIf="!casesForm.get('age').valid && casesForm.get('age').touched">Coloque sua idade</span>
         </mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width">
@@ -41,7 +41,7 @@
         <input matInput placeholder="Endereço" formControlName="address"
                 [errorStateMatcher]="matcher">
         <mat-error>
-          <span *ngIf="!casesForm.get('address').valid && casesForm.get('address').touched">Please enter Address</span>
+          <span *ngIf="!casesForm.get('address').valid && casesForm.get('address').touched">Coloque seu endereço</span>
         </mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width">
@@ -49,7 +49,7 @@
         <input matInput placeholder="Cidade" formControlName="city"
                 [errorStateMatcher]="matcher">
         <mat-error>
-          <span *ngIf="!casesForm.get('city').valid && casesForm.get('city').touched">Please enter City</span>
+          <span *ngIf="!casesForm.get('city').valid && casesForm.get('city').touched">Coloque sua cidade</span>
         </mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width">
@@ -57,7 +57,7 @@
         <input matInput placeholder="País" formControlName="country"
                 [errorStateMatcher]="matcher">
         <mat-error>
-          <span *ngIf="!casesForm.get('country').valid && casesForm.get('country').touched">Please enter Country</span>
+          <span *ngIf="!casesForm.get('country').valid && casesForm.get('country').touched">Coloque seu país</span>
         </mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width">
@@ -68,7 +68,7 @@
           </mat-option>
         </mat-select>
         <mat-error>
-          <span *ngIf="!casesForm.get('status').valid && casesForm.get('status').touched">Please select Status</span>
+          <span *ngIf="!casesForm.get('status').valid && casesForm.get('status').touched">Selecione o status</span>
         </mat-error>
       </mat-form-field>
       <div class="button-row">
